@@ -1,0 +1,116 @@
+:root {
+            --bg-primary: #111827;
+            --bg-secondary: #1F2937;
+            --text-primary: #E5E7EB;
+            --text-secondary: #9CA3AF;
+            --text-tertiary: #6B7280;
+            --border-color: #374151;
+            --accent-primary: #4F46E5;
+            --accent-hover: #4338CA;
+            --ring-color: #6366F1;
+            --delete-hover-color: #F87171;
+        }
+
+        body.light-theme {
+            --bg-primary: #F9FAFB;
+            --bg-secondary: #FFFFFF;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --text-tertiary: #9CA3AF;
+            --border-color: #E5E7EB;
+            --accent-primary: #4F46E5;
+            --accent-hover: #4338CA;
+            --ring-color: #6366F1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .main-container {
+            background-color: var(--bg-secondary);
+            transition: background-color 0.3s ease;
+        }
+        .task-input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid var(--border-color);
+            border-radius: 0;
+            transition: border-color 0.3s ease;
+            color: var(--text-primary);
+        }
+        .task-input::placeholder {
+            color: var(--text-secondary);
+        }
+        .task-input:focus {
+            outline: none;
+            border-bottom-color: var(--ring-color);
+        }
+        #add-task-btn {
+            background-color: var(--accent-primary);
+        }
+        #add-task-btn:hover {
+            background-color: var(--accent-hover);
+        }
+        .controls-container {
+            border-bottom: 1px solid var(--border-color);
+        }
+        #task-counter, #date-display {
+            color: var(--text-secondary);
+        }
+        .task-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .task-item.completed p {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+        }
+        .toggle-task-btn {
+            border: 2px solid var(--text-secondary);
+        }
+        .task-item.completed .toggle-task-btn {
+            background-color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+        .delete-btn {
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            color: var(--text-secondary);
+        }
+        .delete-btn:hover {
+            color: var(--delete-hover-color);
+        }
+        .task-item:hover .delete-btn {
+            opacity: 1;
+        }
+        .filter-btn {
+            padding: 4px 10px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            color: var(--text-secondary);
+            border: 2px solid transparent;
+        }
+        .filter-btn:focus {
+            outline: none;
+            border: 2px solid var(--ring-color);
+        }
+        .filter-btn.active {
+            color: var(--text-primary);
+            font-weight: 500;
+            background-color: var(--bg-primary);
+        }
+        #theme-toggle-btn:focus {
+             outline: none;
+        }
+        #theme-toggle-btn:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--bg-secondary), 0 0 0 4px var(--ring-color);
+        }
+        .empty-list-message {
+            color: var(--text-secondary);
+            text-align: center;
+        }
